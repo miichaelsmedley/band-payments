@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "band-payments",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
+  "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "band-payments" }],
+  // Payments stay off in every deployed environment until an approved provider exists.
+  // APP_ENV, APP_ORIGIN and CALCULATION_SIGNING_KEY are Worker secrets, never committed.
+  "vars": { "PAYMENT_PROVIDER": "unconfigured", "LIVE_PAYMENTS_ENABLED": "false" },
+  "observability": { "enabled": true }
+}

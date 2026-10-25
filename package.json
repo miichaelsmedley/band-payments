@@ -1,0 +1,42 @@
+{
+  "name": "band-payments",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1 --port 3417",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1 --port 3417",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:start": "supabase start -x studio,realtime,imgproxy,logflare,vector,supavisor,postgres-meta,edge-runtime",
+    "db:stop": "supabase stop",
+    "db:test": "supabase test db",
+    "local:setup": "node scripts/local-setup.mjs",
+    "cf:build": "opennextjs-cloudflare build",
+    "cf:deploy": "opennextjs-cloudflare deploy"
+  },
+  "dependencies": {
+    "@fontsource/dm-sans": "^5.3.0",
+    "@fontsource/manrope": "^5.3.0",
+    "@supabase/ssr": "0.12.7",
+    "@supabase/supabase-js": "2.118.0",
+    "lucide-react": "^0.468.0",
+    "next": "16.4.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "server-only": "0.0.1",
+    "zod": "^4.3.0"
+  },
+  "devDependencies": {
+    "@opennextjs/cloudflare": "1.20.12",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "prettier": "^3.9.10",
+    "supabase": "2.121.0",
+    "typescript": "^5.9.0",
+    "vitest": "5.0.5",
+    "wrangler": "4.149.0"
+  },
+  "type": "module"
+}
